@@ -96,7 +96,7 @@
       this.radiusFalloffRate = 0.73
       this.twistRate = 3.02
       this.trunkLength = 2.4
-
+      this.showLeaf = true
       this.update = function () {
         createTree(control)
       }
@@ -229,7 +229,7 @@
     twigMesh.name = 'twig'
 
     scene.add(trunkMesh)
-    scene.add(twigMesh)
+    if (config.showLeaf) scene.add(twigMesh)
 
   }
 
@@ -301,6 +301,7 @@
     gui.add(controlObject, 'twistRate')
     gui.add(controlObject, 'radiusFalloffRate')
     gui.add(controlObject, 'trunkLength')
+    gui.add(controlObject, 'showLeaf')
 
     gui.add(controlObject, 'update')
   }
